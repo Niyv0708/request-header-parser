@@ -21,6 +21,14 @@ app.get('/api/whoami', function(req, res) {
   });
 });
 
+// Root path handler for FCC tests
+app.get('/', function(req, res) {
+  res.json({
+    "message": "Welcome to the Request Header Parser Microservice",
+    "api_endpoint": "/api/whoami"
+  });
+});
+
 // Vercel compatible port binding
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
